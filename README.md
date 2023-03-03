@@ -31,3 +31,4 @@ Things you may want to cover:
 * Category - выбранная категория/тема
 * Question - Конкретный вопрос.
 * Answer - ответ.
+* Result - хранение результата
