@@ -3,9 +3,11 @@
 one:
   title: MyString
   level: 1
-  category: one
+  category_id: 1
+  author_id: 1
 
 two:
   title: MyString
   level: 1
-  category: two
+  category_id: 1
+  author_id: 1
