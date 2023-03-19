@@ -1,7 +1,16 @@
 class Answer < ApplicationRecord
-  scope :on_correct, -> { where(correct: true) }
-
   belongs_to :question
 
   validates :body, presence: true
+  validate :validate_count_of_answers
+
+  scope :correct, -> { where(correct: true) }
+
+  private
+
+  def validate_count_of_answers
+    return if question.answers.count < 4
+
+    errors.add(:base, message: "max answers for question is 4")
+  end
 end
