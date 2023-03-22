@@ -1,0 +1,6 @@
+<h1>Список вопросов</h1>
+<ul>
+  <% @questions.each do |question| %>
+    <li><%= question.body %></li>
+  <% end %>
+</ul>
