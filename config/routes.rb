@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   resources :questions
 
   get '/questions/:id/start', to: 'questions#start'
-  get '/questions/:id/delete', to: 'questions#destroy'
+  get '/questions/:id/delete', to: 'questions#delete'
 end

@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  before_action :current_question, only: %i[show destroy]
+  before_action :current_question, only: %i[show destroy delete]
 
   def index
     @questions = Question.all
@@ -8,6 +8,8 @@ class QuestionsController < ApplicationController
   def new; end
 
   def show; end
+
+  def delete; end
 
   def create
     Question.create!(question_params)

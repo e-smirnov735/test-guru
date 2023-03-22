@@ -1,0 +1,9 @@
+<h1>Удаление вопроса</h1>
+<p>название вопроса: <%= @question.body %></p>
+<p>Номер теста: <%= @question.test_id %>"</p>
+
+<form action="/questions/<%= params[:id] %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="DELETE">
+</form>
