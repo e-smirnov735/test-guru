@@ -1,6 +1,7 @@
-<h1>Список вопросов</h1>
+<h1><%= @test.title %></h1>
+<p>Список вопросов</p>
 <ul>
-  <% @questions.each do |question| %>
-    <li><%= question.body %></li>
+  <% @test.questions.each do |question| %>
+    <li><%= question.id %> - <%= question.body %></li>
   <% end %>
 </ul>
