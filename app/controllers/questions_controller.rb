@@ -16,7 +16,7 @@ class QuestionsController < ApplicationController
     if @question.save
       redirect_to test_questions_path
     else
-      redirect_to :new
+      redirect_to new_test_question_path
     end
   end
 
