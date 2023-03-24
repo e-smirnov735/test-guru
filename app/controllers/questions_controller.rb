@@ -16,7 +16,7 @@ class QuestionsController < ApplicationController
     if @question.save
       redirect_to question_path(@question)
     else
-      render :show, status: :bad_request
+      render :show
     end
   end
 
