@@ -1,8 +1,8 @@
 class QuestionsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
 
-  before_action :current_test
-  before_action :current_question, only: %i[show destroy delete]
+  before_action :current_test, only: %i[index create new]
+  before_action :current_question, only: %i[show destroy]
 
   def index; end
 
@@ -14,9 +14,9 @@ class QuestionsController < ApplicationController
     @question = @test.questions.new(question_params)
 
     if @question.save
-      redirect_to test_questions_path
+      redirect_to question_path(@question)
     else
-      redirect_to new_test_question_path
+      render :show, status: :bad_request
     end
   end
 
@@ -33,7 +33,7 @@ class QuestionsController < ApplicationController
   end
 
   def question_params
-    params.require(:question).permit(:body, :test_id)
+    params.require(:question).permit(:body)
   end
 
   def current_test
@@ -41,6 +41,6 @@ class QuestionsController < ApplicationController
   end
 
   def current_question
-    @question = @test.questions.find(params[:id])
+    @question = Question.find(params[:id])
   end
 end
