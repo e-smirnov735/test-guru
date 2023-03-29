@@ -1,4 +1,4 @@
-<%= render 'form', title: 'Создать', model: [@test, @question] %>
+<%= render 'form', title: 'Создать' %>
 <p>
-  <%= link_to 'Назад', test_questions_url(@question.test_id) %>
+  <%= link_to 'Назад', test_path(@question.test_id) %>
 </p>

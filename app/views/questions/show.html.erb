@@ -1,5 +1,5 @@
 <p>название вопроса: <%= @question.body %></p>
 <p>Номер теста: <%= @question.test_id %>"</p>
 <p>
-  <%= link_to 'Назад', test_questions_url(@question.test_id) %>
+  <%= link_to 'Назад', test_path(@question.test_id) %>
 </p>

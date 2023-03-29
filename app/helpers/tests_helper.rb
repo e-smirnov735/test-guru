@@ -6,8 +6,8 @@ module TestsHelper
     "index" => "Список вопросов"
   }.freeze
 
-  def question_header
-    action_title = TITLES[params[:action]]
-    "#{action_title} для теста: #{@test.title}."
+  def question_header(test, action)
+    action_title = TITLES[action]
+    "#{action_title} для теста: #{test.title}."
   end
 end
