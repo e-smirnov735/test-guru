@@ -7,9 +7,7 @@ module TestsHelper
   }.freeze
 
   def question_header
-
     action_title = TITLES[params[:action]]
-    test_title = @test.title
-    "#{action_title} для теста: #{test_title} "
+    "#{action_title} для теста: #{@test.title}."
   end
 end
