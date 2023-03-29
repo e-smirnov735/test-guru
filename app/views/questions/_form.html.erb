@@ -1,0 +1,12 @@
+<div>
+
+  <%= render 'shared/errors', resource: @question %>
+
+  <%= form_with model: model, local: true do |form| %>
+    <p>
+      <%= form.label :body, "Название" %><br>
+      <%= form.text_field :body %>
+    </p>
+    <%= form.submit title %>
+  <% end %>
+</div>

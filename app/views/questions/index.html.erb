@@ -1,7 +1,17 @@
-<h1><%= @test.title %></h1>
-<p>Список вопросов</p>
-<ul>
-  <% @test.questions.each do |question| %>
-    <li><%= question.id %> - <%= question.body %></li>
-  <% end %>
-</ul>
+<p>
+  <%= link_to 'Создать новый вопрос', new_test_question_path(@test) %>
+</p>
+<p>Список вопросов:</p>
+
+<table>
+  <thead>
+  <tr>
+    <th width="200px">Название</th>
+    <th colspan="3">Действия</th>
+  </tr>
+  </thead>
+  <tbody>
+  <%= render @questions %>
+  </tbody>
+</table>
+
