@@ -1,5 +1,4 @@
 class TestsController < ApplicationController
-
   before_action :current_test, only: %i[show]
 
   def index
@@ -8,7 +7,6 @@ class TestsController < ApplicationController
 
   def show
     @questions = @test.questions
-
   end
 
   private
