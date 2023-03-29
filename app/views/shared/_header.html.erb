@@ -1,5 +1,7 @@
-<h2><%=
-  if params["controller"] == "questions"
-    question_header
-  end
-%></h2>
+<% if params["controller"] == "questions" %>
+  <header>
+    <h2>
+      <%= question_header %>
+    </h2>
+  </header>
+<% end %>
