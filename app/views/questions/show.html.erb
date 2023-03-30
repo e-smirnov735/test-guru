@@ -1,2 +1,6 @@
+<h2>Вопрос из теста: <%= @question.test.title %></h2>
 <p>название вопроса: <%= @question.body %></p>
 <p>Номер теста: <%= @question.test_id %>"</p>
+<p>
+  <%= link_to 'Назад', test_path(@question.test_id) %>
+</p>

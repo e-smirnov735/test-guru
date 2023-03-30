@@ -1,7 +1,0 @@
-<h1><%= @test.title %></h1>
-<p>Список вопросов</p>
-<ul>
-  <% @test.questions.each do |question| %>
-    <li><%= question.id %> - <%= question.body %></li>
-  <% end %>
-</ul>

@@ -1,29 +1,41 @@
 class QuestionsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
 
-  before_action :current_test, only: %i[index create new]
-  before_action :current_question, only: %i[show destroy]
+  before_action :current_test, only: %i[create new]
+  before_action :current_question, only: %i[show destroy edit update]
 
-  def index; end
+  def new
+    @question = @test.questions.new
+  end
 
-  def new; end
-
-  def show; end
+  def show
+    @test = @question.test
+  end
 
   def create
     @question = @test.questions.new(question_params)
 
     if @question.save
-      redirect_to question_path(@question)
+      redirect_to @question
     else
-      render :show
+      render :new
+    end
+  end
+
+  def edit; end
+
+  def update
+    if @question.update(question_params)
+      redirect_to @question
+    else
+      render :edit
     end
   end
 
   def destroy
     @question.destroy!
 
-    render plain: "вопрос: '#{@question.body}' из теста #{@question.test_id} успешно удален!"
+    redirect_to test_path(@question.test_id)
   end
 
   private
