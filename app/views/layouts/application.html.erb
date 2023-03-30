@@ -1,17 +1,14 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>TestGuru</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <%= csrf_meta_tags %>
-  <%= csp_meta_tag %>
-  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-</head>
-<body>
-<%= render '/shared/header' %>
-<main>
-  <%= yield %>
-</main>
-<%= render '/shared/footer' %>
-</body>
+  <head>
+    <title>TestGuru</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  </head>
+  <body>
+    <%= yield %>
+    <%= render '/shared/footer' %>
+  </body>
 </html>

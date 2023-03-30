@@ -6,6 +6,8 @@ module FooterHelper
   end
 
   def github_url(author, repo)
-    ["https://github.com", author, repo].join('/')
+    link_to repo, "https://github.com/#{author}/#{repo}",
+            target: '_blank',
+            rel: "nofollow noopener"
   end
 end
