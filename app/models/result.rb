@@ -31,7 +31,7 @@ class Result < ApplicationRecord
   end
 
   def current_question_number
-    remaining_questions.count
+    total_questions - remaining_questions.count
   end
 
   private
@@ -41,6 +41,8 @@ class Result < ApplicationRecord
   end
 
   def correct_answers?(answer_ids)
+    return correct_answers.ids.empty? if answer_ids.nil?
+
     correct_answers.ids.sort == answer_ids.map(&:to_i).sort
   end
 
