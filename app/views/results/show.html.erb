@@ -1,0 +1,18 @@
+<h1>Тест:  <%= @result.test.title %></h1>
+<p>
+  Всего вопросов <%= @result.total_questions%>
+</p>
+
+<b>
+  Вопрос № <%= @result.current_question_number %>: <%= @result.current_question.body %>.
+</b>
+
+<%= form_with url: result_path(@result), local: true, method: :put do |f| %>
+  <%= f.collection_check_boxes :answers_ids, @result.current_question.answers, :id, :body, include_hidden: false do |b| %>
+    <p>
+      <%= b.check_box id: "answers_ids#{b.object.id}" %>
+      <%= b.label %>
+    </p>
+  <% end %>
+  <%= f.submit "Next" %>
+<% end %>
