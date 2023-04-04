@@ -4,3 +4,11 @@
 <p>
   <%= link_to 'Назад', test_path(@question.test_id) %>
 </p>
+
+<h2>Answers</h2>
+
+<%= link_to 'New answer', new_question_answer_path(@question) %>
+
+<ol>
+  <%= render @question.answers %>
+</ol>

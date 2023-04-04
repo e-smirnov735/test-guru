@@ -46,7 +46,7 @@ questions = Question.create!(
     { body: 'Тип данных, которого нет в Ruby',
       test: tests[0] },
     { body: 'Как обозначается наследование в Ruby',
-      test: tests[1] },
+      test: tests[0] },
     { body: 'Выберете типы данных, которые есть Javascript',
       test: tests[2] },
     { body: 'Метод массива, который изменяет каждый элемент',
