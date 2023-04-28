@@ -18,3 +18,11 @@ body {
     width: 1240px;
     margin: 0 auto;
 }
+
+a {
+    text-decoration: none;
+}
+
+ol, ul {
+    list-style: none;
+}
