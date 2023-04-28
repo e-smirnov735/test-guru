@@ -1,15 +1,20 @@
 <header>
   <%= link_to 'TEST GURU', root_path %>
-  <nav>
-    <%= link_to 'Зарегистрироваться', signup_path, class: 'nav_link' %>
-    <%= link_to 'Войти', login_path, class: 'nav_link' %>
-    <%= button_to 'Выход', logout_path, method: :delete %>
-  </nav>
   <div>
-    <% if logged_in? %>
-      <p class="nav user">Welcome, <b><%= current_user.name %></b> Guru</p>
-    <% else %>
-      <p class="nav user">Welcome, новый пользoватель</b> Guru</p>
-    <% end %>
+    <div>
+      <% if logged_in? %>
+        <p class="nav user">Welcome, <b><%= current_user.name %></b> Guru</p>
+      <% else %>
+        <p class="nav user">Welcome, новый пользoватель</b> Guru</p>
+      <% end %>
+    </div>
+     <nav>
+      <% if logged_in? %>
+        <%= button_to 'Выход', logout_path, method: :delete %>
+      <% else %>
+        <%= link_to 'Зарегистрироваться', signup_path, class: 'nav_link' %>
+        <%= link_to 'Войти', login_path, class: 'nav_link' %>
+      <% end %>
+    </nav>
   </div>
 </header>
