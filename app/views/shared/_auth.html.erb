@@ -10,7 +10,7 @@
     </div>
      <nav>
       <% if logged_in? %>
-        <%= button_to 'Выход', logout_path, method: :delete %>
+        <%= button_to 'Выход', session_path(@current_user), method: :delete %>
       <% else %>
         <%= link_to 'Зарегистрироваться', signup_path, class: 'nav_link' %>
         <%= link_to 'Войти', login_path, class: 'nav_link' %>
