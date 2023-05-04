@@ -8,7 +8,8 @@ class SessionsController < ApplicationController
 
     if user&.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to start_path(session[:path])
+      redirect_to cookies[:request_path] || tests_path
+      cookies.delete :request_path
     else
       flash.now[:alert] = "Неправильный логин или пароль"
       render :new
@@ -22,11 +23,5 @@ class SessionsController < ApplicationController
     end
 
     redirect_to login_path
-  end
-
-  private
-
-  def start_path(path)
-    path && path != login_path ? path : tests_path
   end
 end

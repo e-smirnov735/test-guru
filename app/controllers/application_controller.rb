@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   def authenticate_user!
     return if current_user
 
-    session[:path] = request.original_url
+    cookies[:request_path] = request.original_url
     redirect_to login_path, alert: "Вы должны войти в систему"
   end
 
