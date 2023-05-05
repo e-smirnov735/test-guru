@@ -2,19 +2,16 @@
   <%= link_to 'TEST GURU', root_path %>
   <div>
     <div>
-      <% if logged_in? %>
+      <% if user_signed_in? %>
         <p class="nav user">Welcome, <b><%= current_user.name %></b> Guru</p>
+        <%= button_to 'Выход', destroy_user_session_path, method: :delete %>
       <% else %>
         <p class="nav user">Welcome, новый пользoватель</b> Guru</p>
+          <%= link_to 'Зарегистрироваться', new_user_registration_path, class: 'nav_link' %>
+          <%= link_to 'Войти', new_user_session_path, class: 'nav_link' %>
       <% end %>
     </div>
-     <nav>
-      <% if logged_in? %>
-        <%= button_to 'Выход', session_path(@current_user), method: :delete %>
-      <% else %>
-        <%= link_to 'Зарегистрироваться', signup_path, class: 'nav_link' %>
-        <%= link_to 'Войти', login_path, class: 'nav_link' %>
-      <% end %>
-    </nav>
+
+    <%= render 'shared/flash' %>
   </div>
 </header>
