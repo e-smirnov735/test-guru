@@ -3,7 +3,7 @@
   <div>
     <div>
       <% if user_signed_in? %>
-        <p class="nav user">Welcome, <b><%= current_user.name %></b> Guru</p>
+        <p class="nav user">Welcome, <b><%= current_user.email %></b> Guru</p>
         <%= button_to 'Выход', destroy_user_session_path, method: :delete %>
       <% else %>
         <p class="nav user">Welcome, новый пользoватель</b> Guru</p>

@@ -14,7 +14,6 @@ class User < ApplicationRecord
   has_many :tests, through: :results
 
   validates :email, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
-  validates :name, presence: true
 
   def find_tests_by_level(test_level)
     tests.by_level(test_level)
