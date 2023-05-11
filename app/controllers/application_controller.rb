@@ -3,7 +3,6 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource)
     if resource.is_a?(Admin)
-      flash[:notice] = "Привет, #{current_user.first_name}!"
       admin_tests_path
     else
       session[:previous_url] || root_path
