@@ -1,4 +1,5 @@
 class ResultsController < ApplicationController
+  before_action :authenticate_user!
   before_action :find_result, only: %i[show result update]
 
   def show; end
@@ -9,6 +10,7 @@ class ResultsController < ApplicationController
     @result.accept!(params[:answers_ids])
 
     if @result.completed?
+      TestsMailer.completed_test(@result).deliver_now
       redirect_to result_result_path(@result)
     else
       render :show
