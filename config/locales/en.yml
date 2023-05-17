@@ -31,3 +31,60 @@
 
 en:
   hello: "Hello world"
+
+  helpers:
+    submit:
+      test:
+        create: "Create Test"
+        update: "Update Test"
+    label:
+      test:
+        title: "Title"
+        level: "Level"
+        category_id: "Category"
+
+  shared:
+    errors:
+      header:
+        one: "%{count} error detected"
+        other: "%{count} errors detected"
+
+  tests:
+    index:
+      header: "Tricky tests"
+      label: "Label"
+      level: "Level"
+      count: "Count"
+      actions: "Actions"
+    test:
+      start: "Start"
+
+  results:
+    result:
+      header: "The %{title} Test was Completed!"
+      passed: "Test passed"
+      not_passed: "Test not passed"
+      to_tests: "Go to all tests"
+    show:
+      next: "Next"
+      total: "Total questions in test - %{count}"
+
+  admin:
+    tests:
+      index:
+        header: "Tricky Tests Admin"
+        new_test: "Create new Test"
+        label: "Label"
+        level: "Level"
+        count: "Count"
+        actions: "Actions"
+      test:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+      create:
+        success: "Test was successfully created."
+
+  test_mailer:
+    completed_test:
+      subject: "You just completed the TestGuru test!"

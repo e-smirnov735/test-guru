@@ -1,9 +1,6 @@
-<h1>Закончен тест: <%= @result.test.title %>!</h1>
-
+<h1><%= t('.header', title: @result.test.title) %></h1>
 <h3 class="<%= @result.passed? ? 'green_text' : 'red_text' %>">
-  <%= @result.passed? ? "Тест пройден" : " Tест не пройден" %>
+  <%= @result.passed? ? t('.passed') : t('.not_passed') %>
 </h3>
-
 <p> процент успешных  ответов: <%= @result.percent_of_correct_answers %> </p>
-
-<p><%= link_to "К списку тестов", tests_path %></p>
+<p><%= link_to t('.to_tests'), tests_path %></p>
