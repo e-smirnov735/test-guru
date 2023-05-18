@@ -1,6 +1,6 @@
 <% if resource.errors.present? %>
   <div>
-    <h3><%= t('.header', count: resource.errors.count) %></h3>
+    <h6><%= t('.header', count: resource.errors.count) %></h6>
     <ul>
       <% resource.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
