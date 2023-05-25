@@ -1,5 +1,6 @@
 ru:
   hello: "Привет, мир!"
+  description: "Вопрос из теста %{title} от TestGuru."
 
   helpers:
     submit:

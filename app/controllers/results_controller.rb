@@ -20,6 +20,9 @@ class ResultsController < ApplicationController
   def gist
     result = GistQuestionService.new(@result.current_question).call
 
+    gist = Gist.new(url: result.html_url, user: current_user, question: @result.current_question)
+    gist.save!
+
     flash_options = if result
                       { notice: t('.success',
                                   href: view_context.link_to(t('.here'), result.html_url)) }
