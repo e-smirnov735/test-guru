@@ -1,6 +1,6 @@
 class ResultsController < ApplicationController
   before_action :authenticate_user!
-  before_action :find_result, only: %i[show result update]
+  before_action :find_result, only: %i[show result update gist]
 
   def show; end
 
@@ -15,6 +15,19 @@ class ResultsController < ApplicationController
     else
       render :show
     end
+  end
+
+  def gist
+    result = GistQuestionService.new(@result.current_question).call
+
+    flash_options = if result
+                      { notice: t('.success',
+                                  href: view_context.link_to(t('.here'), result.html_url)) }
+                    else
+                      { alert: t('.failure') }
+                    end
+
+    redirect_to @result, flash_options
   end
 
   private

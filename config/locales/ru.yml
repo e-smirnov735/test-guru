@@ -39,6 +39,10 @@ ru:
     show:
       next: "Следующий"
       total: "Всего вопросов в тесте - %{count}"
+    gist:
+      here: "Здесь"
+      success: "Gist успешно сохранен! %{href}"
+      failure: "Во время сохранения Gist произошла ошибка"
 
   admin:
     tests:
