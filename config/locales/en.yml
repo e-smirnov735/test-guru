@@ -89,6 +89,14 @@ en:
         delete: "Delete"
       create:
         success: "Test was successfully created."
+    gists:
+      index:
+        gist_list: "List of Gist"
+        description: "Description"
+        link: "Link"
+        author: "Author"
+      gist:
+        link: "Link"
 
   test_mailer:
     completed_test:

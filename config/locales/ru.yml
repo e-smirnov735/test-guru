@@ -60,6 +60,14 @@ ru:
         delete: "Удалить"
       create:
         success: "Тест успешно создан."
+    gists:
+      index:
+        gist_list: "Список Gist"
+        description: "Описание"
+        link: "Ссылка"
+        author: "Автор"
+      gist:
+        link: "Ссылка"
 
   test_mailer:
     completed_test:
