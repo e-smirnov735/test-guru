@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources :results, only: %i[show update] do
     member do
       get :result
-      post :gist
+      resources :gists, only: %i[create]
     end
   end
 
@@ -24,6 +24,6 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :gists, only: [:index]
+    resources :gists, only: %i[index]
   end
 end

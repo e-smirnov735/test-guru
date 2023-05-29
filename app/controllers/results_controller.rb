@@ -17,23 +17,6 @@ class ResultsController < ApplicationController
     end
   end
 
-  def gist
-    result = GistQuestionService.new(@result.current_question).call
-    flash_options = ''
-
-    if result
-      gist = Gist.new(url: result.html_url, user: current_user, question: @result.current_question)
-      gist.save!
-
-      flash_options = { notice: t('.success',
-                                  href: view_context.link_to(t('.here'), result.html_url)) }
-    else
-      { alert: t('.failure') }
-    end
-
-    redirect_to @result, flash_options
-  end
-
   private
 
   def find_result

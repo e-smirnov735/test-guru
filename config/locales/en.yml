@@ -68,7 +68,10 @@ en:
     show:
       next: "Next"
       total: "Total questions in test - %{count}"
-    gist:
+      create_gist: "Create Gist"
+
+  gists:
+    create:
       here: "Here"
       success: "Gist was successfuly created! %{href}"
       failure: "An error occurred while saving Gist"

@@ -39,7 +39,10 @@ ru:
     show:
       next: "Следующий"
       total: "Всего вопросов в тесте - %{count}"
-    gist:
+      create_gist: "Создать Gist"
+
+  gists:
+    create:
       here: "Здесь"
       success: "Gist успешно сохранен! %{href}"
       failure: "Во время сохранения Gist произошла ошибка"
