@@ -32,6 +32,9 @@ gem 'rails-i18n', '~> 6.0.0'
 gem 'bootstrap', '~> 5.3.0.alpha3'
 gem 'jquery-rails'
 
+# GitHub Client
+gem "octokit", "~> 5.0"
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
@@ -41,6 +44,9 @@ gem 'bootsnap', '>= 1.4.4', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+
+  # .ENV
+  gem 'dotenv-rails'
 end
 
 group :development do

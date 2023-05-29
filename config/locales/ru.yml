@@ -1,5 +1,5 @@
 ru:
-  hello: "Привет, мир!"
+  description: "Вопрос из теста %{title} от TestGuru."
 
   helpers:
     submit:
@@ -39,6 +39,13 @@ ru:
     show:
       next: "Следующий"
       total: "Всего вопросов в тесте - %{count}"
+      create_gist: "Создать Gist"
+
+  gists:
+    create:
+      here: "Здесь"
+      success: "Gist успешно сохранен! %{href}"
+      failure: "Во время сохранения Gist произошла ошибка"
 
   admin:
     tests:
@@ -55,6 +62,14 @@ ru:
         delete: "Удалить"
       create:
         success: "Тест успешно создан."
+    gists:
+      index:
+        gist_list: "Список Gist"
+        description: "Описание"
+        link: "Ссылка"
+        author: "Автор"
+      gist:
+        link: "Ссылка"
 
   test_mailer:
     completed_test:

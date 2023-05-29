@@ -12,5 +12,6 @@
       <%= b.label %>
     </p>
   <% end %>
-  <%= f.submit t('.next') %>
+  <p><%= f.submit t('.next') %></p>
 <% end %>
+<p><%= button_to t('.create_gist'), gists_path(@result), method: :post %></p>

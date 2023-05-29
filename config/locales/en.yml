@@ -30,7 +30,7 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  description: "A question about %{title} from TestGuru."
 
   helpers:
     submit:
@@ -68,6 +68,13 @@ en:
     show:
       next: "Next"
       total: "Total questions in test - %{count}"
+      create_gist: "Create Gist"
+
+  gists:
+    create:
+      here: "Here"
+      success: "Gist was successfuly created! %{href}"
+      failure: "An error occurred while saving Gist"
 
   admin:
     tests:
@@ -84,6 +91,14 @@ en:
         delete: "Delete"
       create:
         success: "Test was successfully created."
+    gists:
+      index:
+        gist_list: "List of Gist"
+        description: "Description"
+        link: "Link"
+        author: "Author"
+      gist:
+        link: "Link"
 
   test_mailer:
     completed_test:
