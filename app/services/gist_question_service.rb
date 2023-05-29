@@ -36,3 +36,5 @@ class GistQuestionService
     [@question.body, *@question.answers.pluck(:body)].join("\n")
   end
 end
+
+GistResponceData = Struct.new(:success?, :gist_url)
