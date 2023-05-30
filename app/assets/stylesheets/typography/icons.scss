@@ -1,0 +1,15 @@
+.octicon {
+  display: inline-block;
+  vertical-align: text-top;
+  fill: currentColor;
+}
+
+.octicon-alert {
+  &__wrong {
+    fill: red;
+  }
+
+  &__correct {
+    fill: green;
+  }
+}
