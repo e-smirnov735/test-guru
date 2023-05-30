@@ -18,7 +18,7 @@ function passwordsCompare() {
       icon.classList.remove("octicon-alert__correct", "hide");
       icon.classList.add("octicon-alert__wrong");
     } else {
-      icon.classList.remove("octicon-alert__wrong");
+      icon.classList.remove("octicon-alert__wrong", "hide");
       icon.classList.add("octicon-alert__correct");
     }
   } else {
