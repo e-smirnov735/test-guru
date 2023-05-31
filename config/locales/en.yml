@@ -69,6 +69,7 @@ en:
       next: "Next"
       total: "Total questions in test - %{count}"
       create_gist: "Create Gist"
+      test_progress: "Test progress"
 
   gists:
     create:
@@ -89,6 +90,7 @@ en:
         show: "Show"
         edit: "Edit"
         delete: "Delete"
+        cancel: "Cancel"
       create:
         success: "Test was successfully created."
     gists:
