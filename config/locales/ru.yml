@@ -40,7 +40,7 @@ ru:
       next: "Следующий"
       total: "Всего вопросов в тесте - %{count}"
       create_gist: "Создать Gist"
-
+      test_progress: "Прогресс по тесту"
   gists:
     create:
       here: "Здесь"
@@ -60,6 +60,7 @@ ru:
         show: "Показать"
         edit: "Редактировать"
         delete: "Удалить"
+        cancel: "Отменить"
       create:
         success: "Тест успешно создан."
     gists:

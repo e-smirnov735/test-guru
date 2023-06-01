@@ -1,9 +1,12 @@
 <div class="row justify-content-center mt-3">
-  <div class="col col-md-9">
+  <div class="col col-md-10">
     <h2><%= t('.header') %> </h2>
     <p>
       <%= link_to t('.new_test'), new_admin_test_path  %>
     </p>
+
+    <%= render 'shared/errors', resource: @test %>
+
     <table class="table">
       <thead>
         <tr>

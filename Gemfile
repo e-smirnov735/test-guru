@@ -26,6 +26,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'devise', '~> 4.0'
 
 # LOCALIZATION
+gem "i18n-js"
 gem 'rails-i18n', '~> 6.0.0'
 
 # UI

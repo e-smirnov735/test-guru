@@ -1,7 +1,12 @@
 <h1>Тест:  <%= @result.test.title %></h1>
-<p>
-  <%= t('.total', count: @result.total_questions) %>
-</p>
+<%= content_tag :p, t('.total', count: @result.total_questions), class: 'total-questions',
+                  data: {total: @result.total_questions, current: @result.current_question } %>
+<div class="align-middle">
+  <label for="progress"><%= t('.test_progress') %>: </label>
+  <%= content_tag :progress, 'Test Progress', id: "progress", max: 100, value: 0,
+                class: 'test-progress-bar',
+                data: {max: @result.total_questions, current: @result.current_question_number } %>
+</div>
 <b>
   Вопрос № <%= @result.current_question_number %>: <%= @result.current_question.body %>.
 </b>
