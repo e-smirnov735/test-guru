@@ -16,9 +16,12 @@ categories = Category.create!(
 )
 users = User.create!(
   [
-    { name: 'Alex', email: "alex@mail.ru", password: '1111' },
-    { name: 'Masha', email: "masha@mail.ru", password: '2222' },
-    { name: 'Sasha', email: "sasha@mail.ru", password: '3333' }
+    { first_name: 'Alex', last_name: 'Ivanov', email: "alex@mail.ru", password: '111111' },
+    { first_name: 'Masha', last_name: 'Petrov', email: "masha@mail.ru", password: '222222' },
+    { first_name: 'Sasha', last_name: 'Sidorov', email: "sasha@mail.ru", password: '333333' },
+    { first_name: 'Admin', last_name: 'Adminich', type: 'Admin', email: "admin@mail.ru",
+      password: 'admin735' }
+
   ]
 )
 tests = Test.create!(
