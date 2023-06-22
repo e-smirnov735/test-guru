@@ -1,11 +1,11 @@
 databases:
-  - name: test-guru
-    databaseName: test-guru
+  - name: testguru
+    databaseName: testguru
     ipAllowList: []
 
 services:
   - type: web
-    name: test-guru
+    name: testguru
     runtime: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
