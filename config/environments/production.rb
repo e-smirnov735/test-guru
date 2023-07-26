@@ -64,14 +64,14 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
-  # config.action_mailer.smtp.setting = {
-  #   address: 'smtp.gmail.com',
-  #   port: 587,
-  #   user_name: 'informer735',
-  #   password: 'carinagt',
-  #   authentication: 'plain',
-  #   enable_starttls_auto: true
-  # }
+  config.action_mailer.smtp.setting = {
+    address: 'smtp.gmail.com',
+    port: 587,
+    user_name: ENV.fetch('SMTP_USERNAME', nil),
+    password: ENV.fetch('SMTP_PASSWORD', nil),
+    authentication: 'plain',
+    enable_starttls_auto: true
+  }
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
