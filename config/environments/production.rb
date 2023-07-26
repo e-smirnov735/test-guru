@@ -64,7 +64,7 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
-  config.action_mailer.smtp_setting = {
+  config.action_mailer.smtp_settings = {
     address: 'smtp.gmail.com',
     port: 587,
     user_name: ENV.fetch('SMTP_USERNAME', nil),
