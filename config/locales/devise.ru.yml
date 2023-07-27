@@ -85,3 +85,12 @@ ru:
         few: "%{resource}: сохранение не удалось из-за %{count} ошибок"
         many: "%{resource}: сохранение не удалось из-за %{count} ошибок"
         other: "%{resource}: сохранение не удалось из-за %{count} ошибки"
+
+  shared:
+    auth:
+      exit: "Выход"
+      admin_panel: "Панель администратора"
+      register_button: "Регистрация"
+      enter: "Войти"
+      welcome: "Добро пожаловать"
+      gist_list: "Список gist"

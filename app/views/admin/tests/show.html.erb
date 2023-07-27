@@ -1,18 +1,13 @@
 <p>
-  <strong>Title:</strong><%= @test.title %>
+  <strong><%= t('.title') %>: </strong><%= @test.title %>
 </p>
-
 <p>
-   <strong>Level:</strong><%= @test.level %>
+  <strong><%= t('.level') %>: </strong><%= @test.level %>
 </p>
-
-<h2>Questions</h2>
-
-<%= link_to 'New questions', new_admin_test_question_path(@test) %>
-
-<ol>
+<h2><%= t('.questions') %></h2>
+<%= link_to t('.new_question'), new_admin_test_question_path(@test), class: 'btn btn-primary' %>
+<div>
   <%= render @test.questions %>
-</ol>
-
-<%= link_to 'Edit', edit_admin_test_path(@test) %>
-<%= link_to 'Back', admin_tests_path %>
+</div>
+<%= link_to t('edit'), edit_admin_test_path(@test), class: 'btn btn-success' %>
+<%= link_to t('back'), admin_tests_path, class: 'btn btn-success' %>

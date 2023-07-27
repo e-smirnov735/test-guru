@@ -31,6 +31,10 @@
 
 en:
   description: "A question about %{title} from TestGuru."
+  back: "Back"
+  edit: "Edit"
+  show: "Show"
+  delete: "Delete"
 
   helpers:
     submit:
@@ -87,12 +91,16 @@ en:
         count: "Count"
         actions: "Actions"
       test:
-        show: "Show"
-        edit: "Edit"
-        delete: "Delete"
         cancel: "Cancel"
       create:
         success: "Test was successfully created."
+      new:
+        create_test: "Create test"
+      show:
+        title: "Title"
+        level: "Level"
+        questions: "Questions"
+        new_question: "New question"
     gists:
       index:
         gist_list: "List of Gist"
@@ -101,6 +109,12 @@ en:
         author: "Author"
       gist:
         link: "Link"
+    questions:
+      new:
+        create: "Create"
+      form:
+        label: "Label"
+        create: "Create question"
 
   test_mailer:
     completed_test:

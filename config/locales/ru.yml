@@ -1,5 +1,9 @@
 ru:
   description: "Вопрос из теста %{title} от TestGuru."
+  back: "Назад"
+  edit: "Редактировать"
+  show: "Показать"
+  delete: "Удалить"
 
   helpers:
     submit:
@@ -57,12 +61,16 @@ ru:
         count: "Количество"
         actions: "Действия"
       test:
-        show: "Показать"
-        edit: "Редактировать"
-        delete: "Удалить"
         cancel: "Отменить"
       create:
         success: "Тест успешно создан."
+      new:
+        create_test: "Создать тест"
+      show:
+        title: "Название"
+        level: "Уровень"
+        questions: "Вопросы"
+        new_question: "Новый вопрос"
     gists:
       index:
         gist_list: "Список Gist"
@@ -71,6 +79,13 @@ ru:
         author: "Автор"
       gist:
         link: "Ссылка"
+
+    questions:
+      new:
+        create: "Создать"
+      form:
+        label: "Название"
+        create: "Создать вопрос"
 
   test_mailer:
     completed_test:

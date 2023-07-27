@@ -21,7 +21,10 @@ class GistsController < ApplicationController
 
   def flash_msg(is_success, url)
     if is_success
-      { notice: t('.success', href: view_context.link_to(t('.here'), url)) }
+      { notice: t('.success',
+                  href: view_context.link_to(t('.here'), url,
+                                             target: "_blank",
+                                             rel: "nofollow noopener")) }
     else
       { alert: t('.failure') }
     end
