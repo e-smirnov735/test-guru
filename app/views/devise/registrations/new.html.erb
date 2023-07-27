@@ -1,17 +1,17 @@
 <div class="row justify-content-center mt-3" >
   <div class="col col-md-4">
-    <p class="h2">Регистрация</p>
+    <p class="h2"><%= t('.registration') %> </p>
     <div class="card border-primary">
       <div class="card-body">
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
           <div class="form-group reg-form">
             <%= render "devise/shared/error_messages", resource: resource %>
             <p>
-              <%= f.label :first_name, class: 'form-label' %><br />
+              <%= f.label t('.name'), class: 'form-label' %><br />
               <%= f.text_field :first_name, class: 'form-control', autofocus: true, autocomplete: "first_name" %>
             </p>
             <p>
-              <%= f.label :last_name, class: 'form-label' %><br />
+              <%= f.label t('.surname'), class: 'form-label' %><br />
               <%= f.text_field :last_name, class: 'form-control', autocomplete: "last_name" %>
             </p>
             <p>
@@ -19,18 +19,18 @@
               <%= f.email_field :email, class: 'form-control', autocomplete: "email" %>
             </p>
             <p>
-              <%= f.label :password, class: 'form-label' %>
+              <%= f.label t('.password'), class: 'form-label' %>
               <% if @minimum_password_length %>
-                <em>(<%= @minimum_password_length %> characters minimum)</em> <%= octicon "alert", class: "hide" %>
+                <em>(<%= "#{@minimum_password_length} #{t('.characters minimum')}" %> )</em> <%= octicon "alert", class: "hide" %>
               <% end %><br />
               <%= f.password_field :password, class: 'form-control passwordInput', autocomplete: "new-password" %>
             </p>
             <p>
-              <%= f.label :password_confirmation, class: 'form-label passwordConfirmInput' %><br />
+              <%= f.label t('.confirm_password'), class: 'form-label passwordConfirmInput' %><br />
               <%= f.password_field :password_confirmation, class: 'form-control', autocomplete: "new-password" %>
             </p>
             <p>
-              <%= f.submit "Зарегистрироваться", class: 'btn btn-primary' %>
+              <%= f.submit t('.registration') , class: 'btn btn-primary' %>
             </p>
           </div>
         <% end %>
