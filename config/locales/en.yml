@@ -35,6 +35,8 @@ en:
   edit: "Edit"
   show: "Show"
   delete: "Delete"
+  title: "Title"
+  level: "Level"
 
   helpers:
     submit:
@@ -69,11 +71,14 @@ en:
       passed: "Test passed"
       not_passed: "Test not passed"
       to_tests: "Go to all tests"
+      persent_of_correct: "Percent of correct answers"
     show:
       next: "Next"
       total: "Total questions in test - %{count}"
       create_gist: "Create Gist"
       test_progress: "Test progress"
+      test: "Test"
+      question: "Question"
 
   gists:
     create:
@@ -97,8 +102,6 @@ en:
       new:
         create_test: "Create test"
       show:
-        title: "Title"
-        level: "Level"
         questions: "Questions"
         new_question: "New question"
     gists:
@@ -115,6 +118,25 @@ en:
       form:
         label: "Label"
         create: "Create question"
+      show:
+        test: "Test"
+        question: "Question"
+        number: "Number"
+        answers: "Answers"
+        new_answer: "New answer"
+
+    answers:
+      edit:
+        create_answer: "Create answer"
+      form:
+        label: "Label"
+        correct: "Correct"
+      new:
+        new_answer: "New answer"
+      show:
+        question: "Question"
+        answer: "Answer"
+        correct: "Correct"
 
   test_mailer:
     completed_test:

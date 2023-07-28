@@ -4,6 +4,8 @@ ru:
   edit: "Редактировать"
   show: "Показать"
   delete: "Удалить"
+  title: "Название"
+  level: "Уровень"
 
   helpers:
     submit:
@@ -40,11 +42,14 @@ ru:
       passed: "Тест пройден!"
       not_passed: "Тест не пройден..."
       to_tests: "К списку всех тестов"
+      persent_of_correct: "Процент успешных ответов"
     show:
       next: "Следующий"
       total: "Всего вопросов в тесте - %{count}"
       create_gist: "Создать Gist"
       test_progress: "Прогресс по тесту"
+      test: "Тест"
+      question: "Вопрос"
   gists:
     create:
       here: "Здесь"
@@ -67,8 +72,6 @@ ru:
       new:
         create_test: "Создать тест"
       show:
-        title: "Название"
-        level: "Уровень"
         questions: "Вопросы"
         new_question: "Новый вопрос"
     gists:
@@ -86,6 +89,25 @@ ru:
       form:
         label: "Название"
         create: "Создать вопрос"
+      show:
+        test: "Тест"
+        question: "Вопрос"
+        number: "Номер"
+        answers: "Ответы"
+        new_answer: "Новый ответ"
+
+    answers:
+      edit:
+        create_answer: "Создать ответ"
+      form:
+        label: "Название"
+        correct: "Правильный"
+      new:
+        new_answer: "Новый ответ"
+      show:
+        question: "Вопрос"
+        answer: "Ответ"
+        correct: "Правильный"
 
   test_mailer:
     completed_test:

@@ -20,7 +20,7 @@
         <div><%= link_to t('.gist_list'), admin_gists_path %> </div>
       <% end %>
     <% else %>
-      Welcome, <b>новый пользoватель</b> Guru <br>
+      <%= t('.welcome') %>, <b><%= t('.new_user') %></b> Guru <br>
       <%= link_to t('.register_button'), new_user_registration_path, class: 'nav_link' %> |
       <%= link_to t('.enter'), new_user_session_path, class: 'nav_link' %>
     <% end %>

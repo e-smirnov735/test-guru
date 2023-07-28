@@ -1,4 +1,4 @@
-<h1>Тест:  <%= @result.test.title %></h1>
+<h1><%= t('.test') %>:  <%= @result.test.title %></h1>
 <%= content_tag :p, t('.total', count: @result.total_questions), class: 'total-questions',
                   data: {total: @result.total_questions, current: @result.current_question } %>
 <div class="align-middle">
@@ -8,7 +8,7 @@
                 data: {max: @result.total_questions, current: @result.current_question_number } %>
 </div>
 <b>
-  Вопрос № <%= @result.current_question_number %>: <%= @result.current_question.body %>.
+  <%= t('.question') %> № <%= @result.current_question_number %>: <%= @result.current_question.body %>.
 </b>
 <%= form_with url: result_path(@result), local: true, method: :put do |f| %>
   <%= f.collection_check_boxes :answers_ids, @result.current_question.answers, :id, :body, include_hidden: false do |b| %>

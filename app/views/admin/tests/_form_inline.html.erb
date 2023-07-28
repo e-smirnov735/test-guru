@@ -4,7 +4,7 @@
               class: 'form-inline hide',
               data: { test_id: test.id } do |f| %>
   <div class="d-flex">
-    <%= f.text_field :title, class: 'form-control', id: :test_title %>
+    <%= f.text_field t('title'), class: 'form-control', id: :test_title %>
     <%= f.submit 'Ok', class: 'btn btn-primary' %>
   </div>
 <% end %>
