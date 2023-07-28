@@ -1,13 +1,13 @@
 <footer class="text-center">
   <hr>
   <p>
-    <%= current_years %> год. Проект <%= github_url('e-smirnov735', 'test-guru') %>
-    это веб-приложение с возможностью решать разнообразные наборы тестов. Автор Евгений Смирнов.
+    <%= "#{current_years} #{t('.year')}. " %><%= github_url('e-smirnov735', 'test-guru') %>
+    <%= t('.web_description') %>
   </p>
-  <%= link_to "Учебный проект в онлайн-школе Thinknetica",
+  <%= link_to t('.link_description'),
             "http://thinknetica.com",
             target: "_blank",
             rel: "nofollow noopener" %>
   <br>
-  <%= link_to 'Обратная связь', new_feedback_path %>
+  <%= link_to t('.feedback'), new_feedback_path %>
 </footer>

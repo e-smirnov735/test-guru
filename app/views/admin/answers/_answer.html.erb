@@ -1,6 +1,11 @@
 <li>
   <%= answer.body %><br>
-  <%= link_to t('show'), admin_answer_path(answer) %>
-  <%= link_to t('edit'), edit_admin_answer_path(answer) %>
-  <%= button_to t('delete'), admin_answer_path(answer), method: :delete %>
+  <div class="d-flex gap-1 mb-3">
+    <%= link_to t('show'), admin_answer_path(answer),
+        class: 'btn btn-info btn-sm' %>
+    <%= link_to t('edit'), edit_admin_answer_path(answer),
+        class: 'btn btn-warning btn-sm'  %>
+    <%= button_to t('delete'), admin_answer_path(answer),
+        method: :delete, class: 'btn btn-danger btn-sm'  %>
+  </div>
 </li>

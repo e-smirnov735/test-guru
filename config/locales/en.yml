@@ -54,6 +54,11 @@ en:
       header:
         one: "%{count} error detected"
         other: "%{count} errors detected"
+    footer:
+      year: "year"
+      web_description: "is a web application with the ability to solve a variety of test suites. Author Evgeny Smirnov."
+      link_description: "Educational project at the online school Thinknetica"
+      feedback: "Feedback"
 
   tests:
     index:
