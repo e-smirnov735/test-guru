@@ -2,6 +2,10 @@ class ResultsController < ApplicationController
   before_action :authenticate_user!
   before_action :find_result, only: %i[show result update]
 
+  def index
+    @results = current_user.results
+  end
+
   def show; end
 
   def result; end
