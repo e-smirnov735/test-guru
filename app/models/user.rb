@@ -13,6 +13,7 @@ class User < ApplicationRecord
   has_many :results, dependent: :destroy
   has_many :tests, through: :results
   has_many :gists, dependent: :destroy
+  belongs_to :badge
 
   validates :email, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
 
@@ -23,4 +24,10 @@ class User < ApplicationRecord
   def test_passage(test)
     test.results.order(id: :desc).find_by(test_id: test.id)
   end
+
+  # def add_backend_badge(test)
+  #   test.category == 'backend'
+  #   self.badge
+
+  # end
 end
