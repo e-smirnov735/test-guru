@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :results, only: %i[show update] do
+  resources :results, only: %i[show update index] do
     member do
       get :result
       resources :gists, only: %i[create]

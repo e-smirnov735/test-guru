@@ -2,6 +2,8 @@
   <%= link_to 'TEST GURU', root_path, class: 'navbar-brand' %>
   <% if current_page?(admin_tests_path) %>
     <div><%= t('.admin_panel') %></div>
+  <% else %>
+    <div><%= link_to 'Результаты', results_path  %></div>
   <% end %>
   <div class="navbar-text" >
     <% if user_signed_in? %>
