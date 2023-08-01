@@ -1,10 +1,10 @@
 <tr>
   <td><%= badge.title %> </td>
   <td><%= badge.rule %></td>
-  <td><img src="<%= image_path(badge.url) %>" width="100" height="100 alt="badge"></td>
+  <td><%= image_tag badge.url, size: "80", alt: "badge" %></td>
   <td class="d-flex gap-2">
     <%= button_to t('edit'), edit_admin_badge_path(badge),
-                            class: 'btn btn-warning form-inline-link',
+                            class: 'btn btn-warning',
                             method: :get %>
     <%= button_to t('delete'), admin_badge_path(badge), class: 'btn btn-danger', method: :delete %>
   </td>

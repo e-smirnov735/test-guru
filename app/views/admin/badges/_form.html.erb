@@ -1,0 +1,16 @@
+<%= form_with model: [:admin, @badge] do |f| %>
+  <%= render 'shared/errors', resource: @badge %>
+  <p>
+    <%= f.label t('title') %><br>
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label 'rule' %><br>
+    <%= f.text_field :rule %>
+  </p>
+  <p>
+    <%= f.label 'Url' %><br>
+    <%= f.text_field :url %>
+  </p>
+  <p><%= f.submit %> </p>
+<% end %>
