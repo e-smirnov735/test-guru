@@ -34,12 +34,15 @@ class Result < ApplicationRecord
     total_questions - remaining_questions.count
   end
 
+  def add_first_attempt_badge?
+    Result.where("test_id = :test_id and user_id = :user_id",
+                 { test_id: test.id, user_id: user.id }).count == 1 &&
+      user.badges.find_by(rule: "All backend").nil?
+  end
+
   def add_first_attempt_badge
-    if Result.where("test_id = :test_id and user_id = :user_id",
-                    { test_id: test.id, user_id: user.id }).count == 1
-      badge = Badge.find_by rule: "All_backend"
-      user.push(badge)
-    end
+    badge = Badge.find_by rule: "All backend"
+    user.badges.push(badge)
   end
 
   private
