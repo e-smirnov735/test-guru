@@ -10,6 +10,7 @@ class Result < ApplicationRecord
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answers?(answer_ids)
 
+    self.is_passed = passed?
     self.current_question = next_question
     save!
   end
@@ -34,15 +35,20 @@ class Result < ApplicationRecord
     total_questions - remaining_questions.count
   end
 
+  # rules
   def add_first_attempt_badge?
-    Result.where("test_id = :test_id and user_id = :user_id",
-                 { test_id: test.id, user_id: user.id }).count == 1 &&
+    user.tests.where(id: test.id).count == 1 &&
       user.badges.find_by(rule: "All backend").nil?
   end
 
   def add_first_attempt_badge
-    badge = Badge.find_by rule: "All backend"
+    badge = Badge.find_by(rule: "all_backend")
     user.badges.push(badge)
+  end
+
+  def add_category_ruby_badge?
+    Test.joins(:category).where(category: { title: "ruby" }).count ==
+      user.tests.joins(:category).where(categories: { title: "ruby" }).count
   end
 
   private

@@ -71,6 +71,7 @@ ActiveRecord::Schema.define(version: 2023_07_31_101913) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "correct_questions", default: 0
     t.integer "current_question_id"
+    t.boolean "is_passed", default: false
     t.index ["current_question_id"], name: "index_results_on_current_question_id"
     t.index ["test_id"], name: "index_results_on_test_id"
     t.index ["user_id"], name: "index_results_on_user_id"
