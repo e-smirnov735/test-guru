@@ -26,9 +26,11 @@ class User < ApplicationRecord
     test.results.order(id: :desc).find_by(test_id: test.id)
   end
 
-  # def add_backend_badge(test)
-  #   test.category == 'backend'
-  #   self.badge
-
-  # end
+  def passed_tests_ids_by_category(category_name)
+    results.joins(:test)
+           .merge(Test.by_category(category_name))
+           .where(passed?: true)
+           .distinct
+           .pluck("test_id")
+  end
 end
