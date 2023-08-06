@@ -4,6 +4,7 @@
     <div><%= t('.admin_panel') %></div>
   <% else %>
     <div><%= link_to 'Результаты', results_path  %></div>
+    <div><%= link_to 'Награды', badges_path  %></div>
   <% end %>
   <div class="navbar-text" >
     <% if user_signed_in? %>
@@ -20,6 +21,7 @@
           </div>
         <% end %>
         <div><%= link_to t('.gist_list'), admin_gists_path %> </div>
+        <div><%= link_to "Управление бейджами", admin_badges_path %> </div>
       <% end %>
     <% else %>
       <%= t('.welcome') %>, <b><%= t('.new_user') %></b> Guru <br>
