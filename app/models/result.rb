@@ -59,6 +59,19 @@ class Result < ApplicationRecord
     user.badges.push(badge)
   end
 
+  def add_all_first_level_badge?
+    ids_by_tests = Test.by_level(1).ids.to_set
+    ids_by_user = user.passed_tests_ids_by_level(1).to_set
+
+    ids_by_user.subset?(ids_by_tests) &&
+      user.badges.find_by(rule: "all_first_level").nil?
+  end
+
+  def add_all_first_level_badge
+    badge = Badge.find_by(rule: "all_first_level")
+    user.badges.push(badge)
+  end
+
   private
 
   def before_validation_set_first_question
