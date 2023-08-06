@@ -14,7 +14,7 @@ class ResultsController < ApplicationController
     @result.accept!(params[:answers_ids])
 
     if @result.completed?
-      @result.add_first_attempt_badge if @result.add_first_attempt_badge?
+      add_badges
       TestsMailer.completed_test(@result).deliver_now
       redirect_to result_result_path(@result)
     else
@@ -23,6 +23,11 @@ class ResultsController < ApplicationController
   end
 
   private
+
+  def add_badges
+    @result.add_first_attempt_badge if @result.add_first_attempt_badge?
+    @result.add_all_ruby_badge if @result.add_all_ruby_badge?
+  end
 
   def find_result
     @result = Result.find(params[:id])

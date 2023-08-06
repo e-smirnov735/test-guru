@@ -29,8 +29,7 @@ class User < ApplicationRecord
   def passed_tests_ids_by_category(category_name)
     results.joins(:test)
            .merge(Test.by_category(category_name))
-           .where(passed?: true)
-           .distinct
+           .where(is_passed: true)
            .pluck("test_id")
   end
 end

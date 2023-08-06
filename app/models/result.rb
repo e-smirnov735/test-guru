@@ -38,17 +38,25 @@ class Result < ApplicationRecord
   # rules
   def add_first_attempt_badge?
     user.tests.where(id: test.id).count == 1 &&
-      user.badges.find_by(rule: "All backend").nil?
+      user.badges.find_by(rule: "first_attempt").nil?
   end
 
   def add_first_attempt_badge
-    badge = Badge.find_by(rule: "all_backend")
+    badge = Badge.find_by(rule: "first_attempt")
     user.badges.push(badge)
   end
 
-  def add_category_ruby_badge?
-    Test.joins(:category).where(category: { title: "ruby" }).count ==
-      user.tests.joins(:category).where(categories: { title: "ruby" }).count
+  def add_all_ruby_badge?
+    ids_by_tests = Test.by_category("Ruby").ids.to_set
+    ids_by_user = user.passed_tests_ids_by_category("Ruby").to_set
+
+    ids_by_user.subset?(ids_by_tests) &&
+      user.badges.find_by(rule: "all_ruby").nil?
+  end
+
+  def add_all_ruby_badge
+    badge = Badge.find_by(rule: "all_ruby")
+    user.badges.push(badge)
   end
 
   private
