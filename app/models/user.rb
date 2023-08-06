@@ -32,4 +32,11 @@ class User < ApplicationRecord
            .where(is_passed: true)
            .pluck("test_id")
   end
+
+  def passed_tests_ids_by_level(level)
+    results.joins(:test)
+           .merge(Test.by_level(level))
+           .where(is_passed: true)
+           .pluck("test_id")
+  end
 end

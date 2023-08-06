@@ -27,6 +27,7 @@ class ResultsController < ApplicationController
   def add_badges
     @result.add_first_attempt_badge if @result.add_first_attempt_badge?
     @result.add_all_ruby_badge if @result.add_all_ruby_badge?
+    @result.add_all_first_level_badge if @result.add_all_first_level_badge?
   end
 
   def find_result
