@@ -1,20 +1,16 @@
-<%= form_with model: [:admin, @test], local: true do |f| %>
+<%= form_with model: [:admin, @test] do |f| %>
   <%= render 'shared/errors', resource: @test %>
-
   <p>
-    <%= f.label :title %><br>
+    <%= f.label t('title') %><br>
     <%= f.text_field :title, id: :test_title %>
   </p>
-
   <p>
-    <%= f.label :level %><br>
+    <%= f.label t('level') %><br>
     <%= f.number_field :level, id: :test_level %>
   </p>
-
   <p>
     <%= f.label :category_id %>:
     <%= f.collection_select :category_id, Category.all, :id, :title, prompt: true %>
   </p>
-
   <p><%= f.submit %> </p>
 <% end %>

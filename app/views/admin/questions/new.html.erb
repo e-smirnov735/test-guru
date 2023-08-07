@@ -1,5 +1,6 @@
 <h2><%= question_header(@question) %></h2>
-<%= render 'form', title: 'Создать' %>
+<%= render 'form', title: t('.create') %>
+<br>
 <p>
-  <%= link_to 'Назад', admin_test_path(@question.test_id) %>
+  <%= link_to t('back'), admin_test_path(@question.test_id), class: 'btn btn-success' %>
 </p>

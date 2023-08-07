@@ -6,15 +6,15 @@
   <td class="align-middle"><%= test.level %> </td>
   <td class="align-middle"><%= test.questions.count %></td>
   <td class="align-middle">
-    <%= button_to t('.show'), admin_test_path(test), class: 'btn btn-info',  method: :get %>
+    <%= button_to t('show'), admin_test_path(test), class: 'btn btn-info',  method: :get %>
   </td>
   <td class="align-middle">
-    <%= button_to t('.edit'), edit_admin_test_path(test),
+    <%= button_to t('edit'), edit_admin_test_path(test),
                             data: { test_id: test.id },
                             class: 'btn btn-warning form-inline-link',
                             method: :get %>
   </td>
   <td class="align-middle">
-    <%= button_to t('.delete'), admin_test_path(test), class: 'btn btn-danger', method: :delete %>
+    <%= button_to t('delete'), admin_test_path(test), class: 'btn btn-danger', method: :delete %>
   </td>
 </tr>

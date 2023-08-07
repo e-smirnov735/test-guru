@@ -1,0 +1,18 @@
+<h1>Отправить сообщение</h1>
+<%= form_with model: @feedback do |f| %>
+  <div class="form-group">
+    <p>
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+    </p>
+    <p>
+      <%= f.label :email %>
+      <%= f.text_field :email, class: 'form-control' %>
+    </p>
+    <p>
+      <%= f.label :message %>
+      <%= f.text_area :message, class: 'form-control' %>
+    </p>
+  </div>
+  <%= f.submit 'Отправить', class: 'btn btn-primary' %>
+<% end %>

@@ -2,5 +2,5 @@
   <th scope="row" ><%= test.title %></td>
   <td><%= test.level %> </td>
   <td><%= test.questions.count %></td>
-  <td><%= button_to t('.start'), start_test_path(test), class: 'btn btn-primary' %> </td>
+  <td><%= button_to t('.start'), start_test_path(test), class: 'btn btn-primary', disabled: true unless test.questions.empty? %> </td>
 </tr>

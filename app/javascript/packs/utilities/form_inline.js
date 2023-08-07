@@ -29,6 +29,8 @@ function formInlineHandler(testId) {
   const testTitle = document.querySelector(`.test-title[${attr}]`);
   const formInline = document.querySelector(`.form-inline[${attr}]`);
 
+  if (!formInline) return;
+
   if (formInline.classList.contains("hide")) {
     testTitle.classList.add("hide");
     formInline.classList.remove("hide");
@@ -36,6 +38,6 @@ function formInlineHandler(testId) {
   } else {
     testTitle.classList.remove("hide");
     formInline.classList.add("hide");
-    link.value = i18n.t("admin.tests.test.edit");
+    link.value = i18n.t("edit");
   }
 }

@@ -1,5 +1,11 @@
 ru:
   description: "Вопрос из теста %{title} от TestGuru."
+  back: "Назад"
+  edit: "Редактировать"
+  show: "Показать"
+  delete: "Удалить"
+  title: "Название"
+  level: "Уровень"
 
   helpers:
     submit:
@@ -19,6 +25,11 @@ ru:
         many: "Обнаружено %{count} ошибок"
         one: "Обнаружено %{count} ошибка"
         other: "Обнаружено %{count} ошибки"
+    footer:
+      year: "год"
+      web_description: "это веб-приложение с возможностью решать разнообразные наборы тестов. Автор Евгений Смирнов."
+      link_description: "Учебный проект в онлайн-школе Thinknetica"
+      feedback: "Обратная связь"
 
   tests:
     index:
@@ -36,11 +47,14 @@ ru:
       passed: "Тест пройден!"
       not_passed: "Тест не пройден..."
       to_tests: "К списку всех тестов"
+      persent_of_correct: "Процент успешных ответов"
     show:
       next: "Следующий"
       total: "Всего вопросов в тесте - %{count}"
       create_gist: "Создать Gist"
       test_progress: "Прогресс по тесту"
+      test: "Тест"
+      question: "Вопрос"
   gists:
     create:
       here: "Здесь"
@@ -57,12 +71,14 @@ ru:
         count: "Количество"
         actions: "Действия"
       test:
-        show: "Показать"
-        edit: "Редактировать"
-        delete: "Удалить"
         cancel: "Отменить"
       create:
         success: "Тест успешно создан."
+      new:
+        create_test: "Создать тест"
+      show:
+        questions: "Вопросы"
+        new_question: "Новый вопрос"
     gists:
       index:
         gist_list: "Список Gist"
@@ -71,6 +87,32 @@ ru:
         author: "Автор"
       gist:
         link: "Ссылка"
+
+    questions:
+      new:
+        create: "Создать"
+      form:
+        label: "Название"
+        create: "Создать вопрос"
+      show:
+        test: "Тест"
+        question: "Вопрос"
+        number: "Номер"
+        answers: "Ответы"
+        new_answer: "Новый ответ"
+
+    answers:
+      edit:
+        create_answer: "Создать ответ"
+      form:
+        label: "Название"
+        correct: "Правильный"
+      new:
+        new_answer: "Новый ответ"
+      show:
+        question: "Вопрос"
+        answer: "Ответ"
+        correct: "Правильный"
 
   test_mailer:
     completed_test:

@@ -1,7 +1,8 @@
-<tr>
-  <td><%= question.body %></td>
-  <td><%= link_to 'Показать', admin_question_path(question) %></td>
-  <td><%= link_to 'Редактировать', edit_admin_question_path(question) %></td>
-  <td><%= button_to 'Delete', admin_question_path(question), method: :delete %>
-  </td>
-</tr>
+<div class="d-flex mb-3 align-items-center gap-3">
+  <%= question.body %>
+  <div class="d-flex gap-1">
+    <%= link_to t('show'), admin_question_path(question), class: 'btn btn-info' %>
+    <%= link_to t('edit'), edit_admin_question_path(question), class: 'btn btn-warning' %>
+  </div>
+  <%= button_to t('delete'), admin_question_path(question), method: :delete, class: 'btn btn-danger' %>
+</div>
