@@ -1,6 +1,6 @@
 <div class="row justify-content-center mt-3">
   <div class="col col-md-8">
-    <h2> Полученные награды</h2>
+    <h2><%= t('.badges_received') %></h2>
     <table class="table table-sm">
       <tbody>
         <%= render @current_badges %>
@@ -11,7 +11,7 @@
 <hr>
 <div class="row justify-content-center mt-3">
   <div class="col col-md-8">
-    <h2>Все доступные награды</h2>
+    <h2><%= t('.available_badges') %></h2>
     <table class="table table-sm">
       <tbody>
         <%= render @badges %>
