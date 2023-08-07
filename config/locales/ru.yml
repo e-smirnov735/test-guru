@@ -124,6 +124,13 @@ ru:
         answer: "Ответ"
         correct: "Правильный"
 
+    badges:
+      form:
+        rule: "Правило"
+        image_url: "Выбор картинки"
+      new:
+        create_badge: "Создать badge"
+
   test_mailer:
     completed_test:
       subject: "Вы успешно завершили тест на TestGuru!"

@@ -5,12 +5,12 @@
     <%= f.text_field :title %>
   </p>
   <p>
-    <%= f.label 'rule' %><br>
-    <%= f.text_field :rule %>
+    <%= f.label t('.rule') %><br>
+    <%= f.select :rule, rule_list %>
   </p>
   <p>
-    <%= f.label 'Url' %><br>
-    <%= f.text_field :url %>
+    <%= f.label t('.image_url') %><br>
+    <%= f.select :url, image_list %>
   </p>
   <p><%= f.submit %> </p>
 <% end %>

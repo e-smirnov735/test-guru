@@ -153,6 +153,13 @@ en:
         answer: "Answer"
         correct: "Correct"
 
+    badges:
+      form:
+        rule: "Rule"
+        image_url: "Image url"
+      new:
+        create_badge: "Create badge"
+
   test_mailer:
     completed_test:
       subject: "You just completed the TestGuru test!"
