@@ -159,6 +159,12 @@ en:
         image_url: "Image url"
       new:
         create_badge: "Create badge"
+      index:
+        rule: "Rule"
+        image: "Image"
+        action: "Action"
+        badge_list: "Badge list"
+        create_badge: "Create badge"
 
   test_mailer:
     completed_test:

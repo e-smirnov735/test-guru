@@ -130,6 +130,12 @@ ru:
         image_url: "Выбор картинки"
       new:
         create_badge: "Создать badge"
+      index:
+        rule: "Правило"
+        image: "Картинка"
+        action: "Действия"
+        badge_list: "Список Наград"
+        create_badge: "Создать награду"
 
   test_mailer:
     completed_test:
