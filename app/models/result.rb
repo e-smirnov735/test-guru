@@ -50,7 +50,7 @@ class Result < ApplicationRecord
     ids_by_tests = Test.by_category("Ruby").ids.to_set
     ids_by_user = user.passed_tests_ids_by_category("Ruby").to_set
 
-    ids_by_user.subset?(ids_by_tests) &&
+    ids_by_tests.subset?(ids_by_user) &&
       user.badges.find_by(rule: "all_ruby").nil?
   end
 
@@ -63,7 +63,7 @@ class Result < ApplicationRecord
     ids_by_tests = Test.by_level(1).ids.to_set
     ids_by_user = user.passed_tests_ids_by_level(1).to_set
 
-    ids_by_user.subset?(ids_by_tests) &&
+    ids_by_tests.subset?(ids_by_user) &&
       user.badges.find_by(rule: "all_first_level").nil?
   end
 
