@@ -37,13 +37,12 @@ class Result < ApplicationRecord
 
   # rules
   def add_first_attempt_badge?
-    user.tests.where(id: test.id).count == 1 &&
-      user.badges.find_by(rule: "first_attempt").nil?
+    user.tests.where(id: test.id).count == 1 && is_passed
   end
 
   def add_first_attempt_badge
     badge = Badge.find_by(rule: "first_attempt")
-    user.badges.push(badge)
+    user.badges.push(badge) if badge
   end
 
   def add_all_ruby_badge?
@@ -56,7 +55,7 @@ class Result < ApplicationRecord
 
   def add_all_ruby_badge
     badge = Badge.find_by(rule: "all_ruby")
-    user.badges.push(badge)
+    user.badges.push(badge) if badge
   end
 
   def add_all_first_level_badge?
@@ -69,7 +68,7 @@ class Result < ApplicationRecord
 
   def add_all_first_level_badge
     badge = Badge.find_by(rule: "all_first_level")
-    user.badges.push(badge)
+    user.badges.push(badge) if badge
   end
 
   private
