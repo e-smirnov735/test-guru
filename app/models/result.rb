@@ -35,42 +35,6 @@ class Result < ApplicationRecord
     total_questions - remaining_questions.count
   end
 
-  # rules
-  def add_first_attempt_badge?
-    user.tests.where(id: test.id).count == 1 && is_passed
-  end
-
-  def add_first_attempt_badge
-    badge = Badge.find_by(rule: "first_attempt")
-    user.badges.push(badge) if badge
-  end
-
-  def add_all_ruby_badge?
-    ids_by_tests = Test.by_category("Ruby").ids.to_set
-    ids_by_user = user.passed_tests_ids_by_category("Ruby").to_set
-
-    ids_by_tests.subset?(ids_by_user) &&
-      user.badges.find_by(rule: "all_ruby").nil?
-  end
-
-  def add_all_ruby_badge
-    badge = Badge.find_by(rule: "all_ruby")
-    user.badges.push(badge) if badge
-  end
-
-  def add_all_first_level_badge?
-    ids_by_tests = Test.by_level(1).ids.to_set
-    ids_by_user = user.passed_tests_ids_by_level(1).to_set
-
-    ids_by_tests.subset?(ids_by_user) &&
-      user.badges.find_by(rule: "all_first_level").nil?
-  end
-
-  def add_all_first_level_badge
-    badge = Badge.find_by(rule: "all_first_level")
-    user.badges.push(badge) if badge
-  end
-
   private
 
   def before_validation_set_first_question

@@ -3,6 +3,8 @@ class CreateBadges < ActiveRecord::Migration[6.1]
     create_table :badges do |t|
       t.string :title, null: false
       t.string :rule, null: false
+      t.integer :level
+      t.references :category, foreign_key: true
       t.string :url, null: false
 
       t.timestamps

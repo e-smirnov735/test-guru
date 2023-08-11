@@ -25,18 +25,4 @@ class User < ApplicationRecord
   def test_passage(test)
     test.results.order(id: :desc).find_by(test_id: test.id)
   end
-
-  def passed_tests_ids_by_category(category_name)
-    results.joins(:test)
-           .merge(Test.by_category(category_name))
-           .where(is_passed: true)
-           .pluck("test_id")
-  end
-
-  def passed_tests_ids_by_level(level)
-    results.joins(:test)
-           .merge(Test.by_level(level))
-           .where(is_passed: true)
-           .pluck("test_id")
-  end
 end
