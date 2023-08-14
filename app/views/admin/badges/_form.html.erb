@@ -5,16 +5,12 @@
     <%= f.text_field :title %>
   </p>
   <p>
-    <%= f.label t('.rule') %>:
-    <%= f.select :rule, rule_list %>
-  </p>
-  <p>
-    <%= f.label 'Level' %>:
-    <%= f.select :level, level_list, prompt: true %>
-  </p>
-  <p>
     <%= f.label 'Категория' %>:
-    <%= f.collection_select :category_id, Category.all, :id, :title, prompt: true %>
+    <%= f.collection_select :badge_rule_id, BadgeRule.all, :id, :title, prompt: true %>
+  </p>
+  <p>
+    <%= f.label 'Badge params' %>:
+    <%= f.text_field :rule_params %>
   </p>
   <p>
     <%= f.label t('.image_url') %><br>

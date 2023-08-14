@@ -8,6 +8,8 @@ class BadgeService
   end
 
   def call
+    return unless @result.is_passed
+
     add_first_attempt_badge if completed_on_first_attempt?
     add_by_category_badge if completed_by_category?
     add_by_level_badge if completed_by_level?

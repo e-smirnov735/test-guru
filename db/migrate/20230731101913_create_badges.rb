@@ -1,11 +1,16 @@
 class CreateBadges < ActiveRecord::Migration[6.1]
   def change
+    create_table :badge_rules do |t|
+      t.string :title, null: false
+
+      t.timestamps
+    end
+
     create_table :badges do |t|
       t.string :title, null: false
-      t.string :rule, null: false
-      t.integer :level
-      t.references :category, foreign_key: true
+      t.string :rule_params, null: false
       t.string :url, null: false
+      t.references :badge_rule, null: false
 
       t.timestamps
     end
