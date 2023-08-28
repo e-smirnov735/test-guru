@@ -24,20 +24,13 @@ ActiveRecord::Schema.define(version: 2023_07_31_101913) do
     t.index ["question_id"], name: "index_answers_on_question_id"
   end
 
-  create_table "badge_rules", force: :cascade do |t|
-    t.string "title", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "badges", force: :cascade do |t|
     t.string "title", null: false
-    t.string "rule_params", null: false
+    t.string "rule_type", null: false
+    t.string "rule_value", null: false
     t.string "url", null: false
-    t.bigint "badge_rule_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["badge_rule_id"], name: "index_badges_on_badge_rule_id"
   end
 
   create_table "categories", force: :cascade do |t|

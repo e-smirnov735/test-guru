@@ -10,17 +10,13 @@ class Result < ApplicationRecord
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answers?(answer_ids)
 
-    self.is_passed = passed?
+    self.is_passed = percent_of_correct_answers >= PERCENT_FOR_PASS
     self.current_question = next_question
     save!
   end
 
   def completed?
     current_question.nil?
-  end
-
-  def passed?
-    percent_of_correct_answers >= PERCENT_FOR_PASS
   end
 
   def percent_of_correct_answers

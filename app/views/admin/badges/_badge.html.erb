@@ -1,6 +1,7 @@
 <tr>
   <td><%= badge.title %> </td>
-  <td><%= badge.badge_rule.title %></td>
+  <td><%= badge.rule_type %></td>
+  <td><%= badge.rule_value %></td>
   <td><%= image_tag badge.url, size: "80", alt: "badge" %></td>
   <td class="d-flex gap-2">
     <%= button_to t('edit'), edit_admin_badge_path(badge),
