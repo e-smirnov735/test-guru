@@ -1,4 +1,4 @@
-class AddingBadgeService
+class BadgeAddingService
   RULES = {
     all_category: BadgeRule::AllCategoryRuleSpecification,
     all_level: BadgeRule::AllLevelRuleSpecification,
