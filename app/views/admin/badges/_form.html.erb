@@ -1,0 +1,20 @@
+<%= form_with model: [:admin, @badge] do |f| %>
+  <%= render 'shared/errors', resource: @badge %>
+  <p>
+    <%= f.label t('title') %>
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label 'Категория' %>:
+    <%= f.text_field :rule_type %>
+  </p>
+  <p>
+    <%= f.label 'Badge params' %>:
+    <%= f.text_field :rule_value %>
+  </p>
+  <p>
+    <%= f.label t('.image_url') %><br>
+    <%= f.select :url, image_list %>
+  </p>
+  <p><%= f.submit %> </p>
+<% end %>

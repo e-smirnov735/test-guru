@@ -1,0 +1,7 @@
+<h2>title: <%= @badge.title %></h2>
+<p>Type: <%= @badge.rule_type %></p>
+<p>Value: <%= @badge.rule_value %></p>
+<p><%= image_tag @badge.url, size: "80" %>"</p>
+<p>
+  <%= link_to t('back'), admin_badges_path, class: 'btn btn-success' %>
+</p>

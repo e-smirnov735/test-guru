@@ -1,6 +1,6 @@
 <h1><%= t('.header', title: @result.test.title) %></h1>
-<h3 class="<%= @result.passed? ? 'green_text' : 'red_text' %>">
-  <%= @result.passed? ? t('.passed') : t('.not_passed') %>
+<h3 class="<%= @result.is_passed ? 'green_text' : 'red_text' %>">
+  <%= @result.is_passed ? t('.passed') : t('.not_passed') %>
 </h3>
 <p><%= t('.persent_of_correct') %>: <%= @result.percent_of_correct_answers %> </p>
 <p><%= link_to t('.to_tests'), tests_path %></p>

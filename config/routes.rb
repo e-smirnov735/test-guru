@@ -10,7 +10,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :results, only: %i[show update] do
+  resources :badges, only: :index
+
+  resources :results, only: %i[show update index] do
     member do
       get :result
       resources :gists, only: %i[create]
@@ -27,6 +29,8 @@ Rails.application.routes.draw do
     end
 
     resources :gists, only: %i[index]
+
+    resources :badges
   end
 
   resources :feedbacks, only: %i[new create]

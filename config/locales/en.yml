@@ -77,6 +77,8 @@ en:
       not_passed: "Test not passed"
       to_tests: "Go to all tests"
       persent_of_correct: "Percent of correct answers"
+      yess: "Yes"
+      not: "No"
     show:
       next: "Next"
       total: "Total questions in test - %{count}"
@@ -84,12 +86,20 @@ en:
       test_progress: "Test progress"
       test: "Test"
       question: "Question"
+    index:
+      result_list: "Result list"
+      passed?: "Passed?"
 
   gists:
     create:
       here: "Here"
       success: "Gist was successfuly created! %{href}"
       failure: "An error occurred while saving Gist"
+
+  badges:
+    index:
+      badges_received: "Badges received"
+      available_badges: "Available badges"
 
   admin:
     tests:
@@ -142,6 +152,19 @@ en:
         question: "Question"
         answer: "Answer"
         correct: "Correct"
+
+    badges:
+      form:
+        rule: "Rule"
+        image_url: "Image url"
+      new:
+        create_badge: "Create badge"
+      index:
+        rule: "Rule"
+        image: "Image"
+        action: "Action"
+        badge_list: "Badge list"
+        create_badge: "Create badge"
 
   test_mailer:
     completed_test:

@@ -2,6 +2,10 @@ class ResultsController < ApplicationController
   before_action :authenticate_user!
   before_action :find_result, only: %i[show result update]
 
+  def index
+    @results = current_user.results
+  end
+
   def show; end
 
   def result; end
@@ -10,6 +14,8 @@ class ResultsController < ApplicationController
     @result.accept!(params[:answers_ids])
 
     if @result.completed?
+      BadgeAddingService.call(@result)
+
       TestsMailer.completed_test(@result).deliver_now
       redirect_to result_result_path(@result)
     else
