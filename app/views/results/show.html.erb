@@ -1,4 +1,11 @@
 <h1><%= t('.test') %>:  <%= @result.test.title %></h1>
+<% if @result.test.timer_in_sec  %>
+  <p>
+    Время до окончания:
+    <%= content_tag :span, @time_left, class: 'current-time',
+                data: {time_left: @time_left } %>
+  </p>
+<% end %>
 <%= content_tag :p, t('.total', count: @result.total_questions), class: 'total-questions',
                   data: {total: @result.total_questions, current: @result.current_question } %>
 <div class="align-middle">
@@ -22,3 +29,22 @@
 <p>
   <%= button_to t('.create_gist'), gists_path(@result), method: :post %>
 </p>
+<script>
+  document.addEventListener("turbolinks:load", function () {
+    current_time = document.querySelector(".current-time");
+    if (!current_time) {
+      clearInterval(timerId);
+      return;
+    }
+
+    time = parseInt(current_time.dataset.timeLeft);
+    var timerId = setInterval(() => {
+      time -= 1;
+      current_time.innerText = time;
+      if (time == 0) {
+        clearInterval(timerId);
+        window.location.href = "<%=  final_result_path(@result) %>"
+      }
+    }, 1000);
+  });
+</script>

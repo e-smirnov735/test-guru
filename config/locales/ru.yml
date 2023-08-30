@@ -6,6 +6,7 @@ ru:
   delete: "Удалить"
   title: "Название"
   level: "Уровень"
+  timer: "Время прохождения (в секундах)"
 
   helpers:
     submit:

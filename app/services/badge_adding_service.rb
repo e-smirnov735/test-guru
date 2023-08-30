@@ -1,4 +1,4 @@
-class BadgeAddingService
+class BadgeAddingService < ApplicationService
   RULES = {
     all_category: BadgeRule::AllCategoryRuleSpecification,
     all_level: BadgeRule::AllLevelRuleSpecification,
@@ -17,10 +17,6 @@ class BadgeAddingService
 
       add_badge(badge) if rule.satisfied?
     end
-  end
-
-  def self.call(...)
-    new(...).call
   end
 
   private

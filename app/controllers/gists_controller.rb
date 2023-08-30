@@ -3,7 +3,7 @@ class GistsController < ApplicationController
   before_action :find_result
 
   def create
-    result = GistQuestionService.new(@result.current_question).call
+    result = GistQuestionService.call(@result.current_question)
 
     if result.success?
       Gist.create!(url: result.gist_url, user: current_user,
