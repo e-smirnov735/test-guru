@@ -6,6 +6,8 @@ class TestTimerService < ApplicationService
   end
 
   def call
+    return unless @result.test.timer_in_sec
+
     @result.is_passed = false unless passed?
   end
 
