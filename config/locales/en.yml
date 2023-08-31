@@ -37,6 +37,7 @@ en:
   delete: "Delete"
   title: "Title"
   level: "Level"
+  timer: "Timer (in seconds)"
 
   helpers:
     submit:

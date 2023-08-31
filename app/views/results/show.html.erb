@@ -1,4 +1,11 @@
 <h1><%= t('.test') %>:  <%= @result.test.title %></h1>
+<% if @result.with_timer?  %>
+  <p>
+    Время до окончания:
+    <%= content_tag :span, @time_left, class: 'current-time',
+                data: {time_left: @result.time_left } %>
+  </p>
+<% end %>
 <%= content_tag :p, t('.total', count: @result.total_questions), class: 'total-questions',
                   data: {total: @result.total_questions, current: @result.current_question } %>
 <div class="align-middle">
@@ -10,7 +17,7 @@
 <b>
   <%= t('.question') %> № <%= @result.current_question_number %>: <%= @result.current_question.body %>.
 </b>
-<%= form_with url: result_path(@result), local: true, method: :put do |f| %>
+<%= form_with url: result_path(@result), id: 'result-form', local: true, method: :put do |f| %>
   <%= f.collection_check_boxes :answers_ids, @result.current_question.answers, :id, :body, include_hidden: false do |b| %>
     <p>
       <%= b.check_box id: "answers_ids#{b.object.id}" %>

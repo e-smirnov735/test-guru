@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :results, only: %i[show update index] do
     member do
       get :result
+      get :final
       resources :gists, only: %i[create]
     end
   end

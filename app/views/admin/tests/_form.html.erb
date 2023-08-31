@@ -12,5 +12,9 @@
     <%= f.label :category_id %>:
     <%= f.collection_select :category_id, Category.all, :id, :title, prompt: true %>
   </p>
+  <p>
+    <%= f.label t('timer') %><br>
+    <%= f.number_field :timer_in_sec, id: :test_timer_in_sec %>
+  </p>
   <p><%= f.submit %> </p>
 <% end %>

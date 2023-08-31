@@ -16,7 +16,7 @@ class Result < ApplicationRecord
   end
 
   def completed?
-    current_question.nil?
+    current_question.nil? || (with_timer? && time_left.negative?)
   end
 
   def percent_of_correct_answers
@@ -29,6 +29,14 @@ class Result < ApplicationRecord
 
   def current_question_number
     total_questions - remaining_questions.count
+  end
+
+  def time_left
+    self.test.timer_in_sec - (Time.now - created_at).to_i
+  end
+
+  def with_timer?
+    self.test.timer_in_sec
   end
 
   private
