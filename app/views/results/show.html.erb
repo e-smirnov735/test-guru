@@ -1,5 +1,5 @@
 <h1><%= t('.test') %>:  <%= @result.test.title %></h1>
-<% if @result.test.timer_in_sec  %>
+<% if @result.with_timer?  %>
   <p>
     Время до окончания:
     <%= content_tag :span, @time_left, class: 'current-time',

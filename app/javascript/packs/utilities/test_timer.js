@@ -1,7 +1,6 @@
 document.addEventListener("turbolinks:load", function () {
   const current_time = document.querySelector(".current-time");
   if (!current_time) {
-    clearInterval(timerId);
     return;
   }
 
