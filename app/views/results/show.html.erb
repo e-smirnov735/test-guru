@@ -3,7 +3,7 @@
   <p>
     Время до окончания:
     <%= content_tag :span, @time_left, class: 'current-time',
-                data: {time_left: @time_left } %>
+                data: {time_left: @result.time_left } %>
   </p>
 <% end %>
 <%= content_tag :p, t('.total', count: @result.total_questions), class: 'total-questions',
@@ -17,7 +17,7 @@
 <b>
   <%= t('.question') %> № <%= @result.current_question_number %>: <%= @result.current_question.body %>.
 </b>
-<%= form_with url: result_path(@result), local: true, method: :put do |f| %>
+<%= form_with url: result_path(@result), id: 'result-form', local: true, method: :put do |f| %>
   <%= f.collection_check_boxes :answers_ids, @result.current_question.answers, :id, :body, include_hidden: false do |b| %>
     <p>
       <%= b.check_box id: "answers_ids#{b.object.id}" %>
@@ -29,22 +29,3 @@
 <p>
   <%= button_to t('.create_gist'), gists_path(@result), method: :post %>
 </p>
-<script>
-  document.addEventListener("turbolinks:load", function () {
-    current_time = document.querySelector(".current-time");
-    if (!current_time) {
-      clearInterval(timerId);
-      return;
-    }
-
-    time = parseInt(current_time.dataset.timeLeft);
-    var timerId = setInterval(() => {
-      time -= 1;
-      current_time.innerText = time;
-      if (time == 0) {
-        clearInterval(timerId);
-        window.location.href = "<%=  final_result_path(@result) %>"
-      }
-    }, 1000);
-  });
-</script>

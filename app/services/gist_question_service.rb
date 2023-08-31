@@ -1,4 +1,4 @@
-class GistQuestionService < ApplicationService
+class GistQuestionService
   def initialize(question, client: default_client)
     @question = question
     @test = @question.test
